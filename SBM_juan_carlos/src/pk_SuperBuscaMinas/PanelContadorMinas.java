@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 public class PanelContadorMinas extends JPanel {
 
-    private JLabel lblMinas = new JLabel();
+    private JLabel lblMinas=new JLabel();
     private JLabel lblContadorMinas;
     private int numMinas;
     
