@@ -23,7 +23,8 @@ public class BotonMina extends JButton {
 	private int numMinasAdyacentes = 0;
 	private Valor valor = Valor.VACIO;
 	private Estado estado = Estado.BOTON;
-	private int fil, col;
+	public static int fil;
+	public static int col;
 	
 
 	/**
@@ -153,6 +154,7 @@ public class BotonMina extends JButton {
 		});
 		setEnabled(false);
 	}
+	
 	
 	/**
 	 * @return the fil

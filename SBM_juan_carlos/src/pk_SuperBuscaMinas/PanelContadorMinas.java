@@ -48,4 +48,6 @@ public class PanelContadorMinas extends JPanel {
     	numMinas++;
     	lblContadorMinas.setText(Integer.toString(numMinas));
     }
+    
+ 
 }

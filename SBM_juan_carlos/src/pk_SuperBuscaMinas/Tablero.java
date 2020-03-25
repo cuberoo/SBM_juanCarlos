@@ -113,8 +113,8 @@ public class Tablero {
 		for (int fil=0; fil<matrizBotones.length; fil++) {
 			for (int col=0; col<matrizBotones.length; col++) {
 				matrizBotones[fil][col] = new BotonMina(fil, col);
-				
 				BotonMina celda = matrizBotones[fil][col];
+				Utilidades.imprimeMatrizBotones(matrizBotones);
 				
 				// Añado el listener de ratón
 				celda.addMouseListener(new MouseListener() {
@@ -179,6 +179,12 @@ public class Tablero {
 		
 		// ----------------- CREACION DE MINAS -----------------
 		// Genero aleatoriamente numMinas minas
+		plantaMina();		
+		// ----------------- CREACION DE MINAS -----------------
+	}
+
+
+	private void plantaMina() {
 		int contador_minas = NUM_MINAS;
 		int filaMina;
 		int columnaMina;
@@ -214,8 +220,7 @@ public class Tablero {
 					botonesNoMinaSinPulsar++;
 				}
 			}
-		}		
-		// ----------------- CREACION DE MINAS -----------------
+		}
 	}		
 	
 	
@@ -225,19 +230,26 @@ public class Tablero {
 			ejecutar_sonido("res/Explosion.wav");
 			muestraMinas();
 			
-			panelTiempo.detener();
-			
-			JOptionPane.showMessageDialog(null, "La mina explotó!!", "Fin del juego", JOptionPane.DEFAULT_OPTION);
-			System.exit(0);
+			mensajeFinDeJuego("La mina explotó!!");
 		}
 		else if (botonesNoMinaSinPulsar <= 0) {	// FIN DEL JUEGO: HA GANADO
 			ejecutar_sonido("res/aplausos.wav");
 			
-			panelTiempo.detener();
+			
+			mensajeFinDeJuego("Ganó la partida!!\nHa tardado: " + panelTiempo.getSegundos() + " segundos");
+		/*	panelTiempo.detener();
 			
 			JOptionPane.showMessageDialog(null, "Ganó la partida!!\nHa tardado: " + panelTiempo.getSegundos() + " segundos", "Fin del juego", JOptionPane.DEFAULT_OPTION);
-			System.exit(0);
+			System.exit(0);*/
 		}
+	}
+
+
+	private void mensajeFinDeJuego(String mensaje) {
+		panelTiempo.detener();
+		
+		JOptionPane.showMessageDialog(null, mensaje, "Fin del juego", JOptionPane.DEFAULT_OPTION);
+		System.exit(0);
 	}	
 	
 	
@@ -434,13 +446,5 @@ public class Tablero {
 		}
 				
 		return numMinas;
-	}
-
-	/**
-	 * Método que imprime una matriz por pantalla
-	 */
-	public void imprimeMatrizBotones(BotonMina[][] matrizBotones) {
-// TODO
-
 	}		
 }
