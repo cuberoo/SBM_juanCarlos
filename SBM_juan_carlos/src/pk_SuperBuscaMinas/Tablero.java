@@ -26,6 +26,8 @@ public class Tablero {
 	private boolean minaPulsada = false;
 	
 	private ArrayList<Coordenadas> listaPosicionMinas = new ArrayList<Coordenadas>();
+	public static int WINDOW_HORIZONTAL_SIZE= 500;
+	public static int WINDOW_VERTICAL_SIZE=500;
 	
 	
 	// Clase interna para almacenar pares de coordenadas

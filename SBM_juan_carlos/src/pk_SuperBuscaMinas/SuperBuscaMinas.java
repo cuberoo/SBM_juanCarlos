@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 public class SuperBuscaMinas {
-
+	
 	private JFrame frmBuscaMinas;
 
 	/**
@@ -34,11 +34,9 @@ public class SuperBuscaMinas {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		int WINDOW_VERTICAL_SIZE=500;
-		int WINDOW_HORIZONTAL_SIZE= 500;
 		frmBuscaMinas = new JFrame();
 		frmBuscaMinas.setTitle("Busca Minas");
-		frmBuscaMinas.setBounds(0, 0, WINDOW_VERTICAL_SIZE, WINDOW_HORIZONTAL_SIZE);
+		frmBuscaMinas.setBounds(0, 0, Tablero.WINDOW_VERTICAL_SIZE, Tablero.WINDOW_HORIZONTAL_SIZE);
 		frmBuscaMinas.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frmBuscaMinas.getContentPane().setLayout(null);	
